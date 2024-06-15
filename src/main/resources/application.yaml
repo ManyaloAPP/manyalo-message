@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: manyalo-message
+
+  # conection to the database mariadb r2dbc
+  r2dbc:
+    url: r2dbc:mariadb://localhost:3306/manyalo_db
+    username: root
+    password: root
+
+# logging configuration
+logging:
+  level:
+    root: INFO
+    org.springframework.r2dbc: DEBUG
+
+#server port
+server:
+  port: 8080
