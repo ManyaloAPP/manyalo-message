@@ -62,6 +62,23 @@ create index university_code
     on users (university_id);
 
 create
+    definer = root@localhost procedure get_universities_with_careers()
+BEGIN
+    SELECT
+        u.id AS university_id,
+        u.name AS university_name,
+        u.address AS university_address,
+        c.id AS career_id,
+        c.name AS career_name
+    FROM
+        university u
+            JOIN
+        university_careers uc ON u.id = uc.university_id
+            JOIN
+        careers c ON uc.career_id = c.id;
+END;
+
+create
     definer = root@localhost procedure sp_create_user_guest_with_feedback(IN name_user varchar(50),
                                                                           IN email_user varchar(100),
                                                                           IN university int(255), IN career int(100),
