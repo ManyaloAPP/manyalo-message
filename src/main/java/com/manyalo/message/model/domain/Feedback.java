@@ -1,15 +1,17 @@
-package com.manyalo.message.model;
+package com.manyalo.message.model.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "feedback_messages")
@@ -22,16 +24,10 @@ public class Feedback {
     @Column("message")
     private String message;
 
-    @Column("time_stamp")
-    private LocalDate timeStamp;
-
-    @Column("status")
-    private String status;
-
-    @Column("response")
-    private String response;
+    @Column("times_tamp")
+    private LocalDateTime timeStamp;
 
     @Column("user_id")
-    private User user;
+    private Long userId;
 
 }

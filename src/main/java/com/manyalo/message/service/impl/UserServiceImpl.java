@@ -1,6 +1,6 @@
 package com.manyalo.message.service.impl;
 
-import com.manyalo.message.model.User;
+import com.manyalo.message.model.domain.User;
 import com.manyalo.message.repository.UserRepository;
 import com.manyalo.message.service.UserService;
 import lombok.RequiredArgsConstructor;
