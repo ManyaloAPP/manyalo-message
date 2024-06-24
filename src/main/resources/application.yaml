@@ -4,9 +4,12 @@ spring:
 
   # conection to the database mariadb r2dbc
   r2dbc:
-    url: r2dbc:mariadb://localhost:3307/manyalo_db
+    url: r2dbc:mariadb://localhost:3306/manyalo_db
     username: root
-    password: mariadb123
+    password: root
+    pool:
+      initial-size: 10
+      max-size: 20
 
 # logging configuration
 logging:

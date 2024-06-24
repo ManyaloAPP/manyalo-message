@@ -1,4 +1,4 @@
-package com.manyalo.message.model;
+package com.manyalo.message.model.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
